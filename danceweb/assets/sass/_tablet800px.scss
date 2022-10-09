@@ -1,0 +1,28 @@
+
+    .hero{
+        background: linear-gradient(rgba(53, 56, 102, 0.5), rgba(192, 123, 53, 0.5)), url(../images/tablet/pic6.jpg) !important;
+        background-size: cover !important;
+        background-position-x: center !important;
+    }
+    .amazing__dance {
+        flex-direction: column;
+    }
+    footer{
+        .container_box{
+            flex-direction: column;
+        }
+    }
+
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 3.25rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
