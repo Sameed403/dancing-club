@@ -8,7 +8,7 @@
 
 }
 
-* {
+*{
     box-sizing: border-box;
     overflow-x: hidden;
     padding: 0;
@@ -32,27 +32,27 @@ h6 {
 }
 
 h1 {
-    font-size: 5.25rem;
-}
-
-h2 {
     font-size: 3.75rem;
 }
 
-h3 {
+h2 {
     font-size: 3rem;
 }
 
-h4 {
+h3 {
     font-size: 2.125rem;
 }
 
-h5 {
+h4 {
     font-size: 1.5rem;
 }
 
-h6 {
+h5 {
     font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
 }
 
 p {
@@ -110,31 +110,67 @@ header {
         }
 
         ul {
-            flex: 0.9;
-            width: 100%;
-            min-height: inherit;
-            display: flex;
-            justify-content: end;
-            align-items: center;
-
-            a {
-                color: #bcbdeb;
-                padding: 0rem 2rem;
-            }
+            display: none;
         }
 
     }
 
     .cursor{
-        display: none;
+        display: block;
+        background-image: url('../images/svg/menu.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 6;
+        width: 75px;
+        height: 75px;
+        cursor: pointer;
     }
     
-    .mobile_nav{
-        display: none;
+    .action{
+        transform: translateX(0%) !important;
+        transition: 0.6s all ease-in-out !important;
     }
 
+    .mobile_nav{
+        width: 100%;
+        min-height: 100vh;
+        backdrop-filter: blur(25px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 5;
+        transform: translateX(-100%);
+        transition: 0.6s all ease-in-out;
+
+        ul{
+            width: inherit;
+            min-height: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+             
+            li{
+                padding: 1.5rem 1rem;
+                width: inherit;
+                text-align: center;
+
+                a{
+                    color: whitesmoke;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+    
+
     .hero {
-        background: linear-gradient(rgba(53, 56, 102, 0.5), rgba(192, 123, 53, 0.5)), url(../images/desktop/pic6.webp);
+        background: linear-gradient(rgba(53, 56, 102, 0.5), rgba(192, 123, 53, 0.5)), url(../images/desktop/pic6.jpg);
         background-size: cover;
         background-position: center center;
         min-height: inherit;
@@ -216,9 +252,8 @@ main {
                         }
 
                         p {
-                            width: 75%;
                             margin: auto;
-                            text-align: center;
+                            text-align: justify;
                             color: #7f7fa8;
                         }
 
@@ -298,7 +333,7 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: row;
+        flex-direction: column;
         .image__box {
             background: linear-gradient(rgba(53, 56, 102, 0.3), rgba(0, 24, 131, 0.3)), url(../images/desktop/pic4.webp);
             width: inherit;
@@ -322,13 +357,13 @@ main {
             @include gradient();
 
             h2 {
-                font-size: 4em;
                 color: #bcbdeb;
             }
 
             p {
                 color: #9c9cca;
-                margin: 1.5rem 0rem;
+                text-align: justify;
+                margin: 2rem 0rem;
             }
 
             button {
@@ -351,11 +386,10 @@ main {
             color: #bcbdeb;
             width: inherit;
             margin: 3rem 0rem;
-
+            padding: 2rem;
             p {
-                margin: 1rem auto;
-                width: 80%;
-
+                margin: 2rem auto;
+                text-align: justify;
             }
         }
 
@@ -412,17 +446,15 @@ main {
         .container {
             min-height: inherit;
             width: inherit;
-            padding: 2rem 0rem;
+            padding: 2rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
 
             p {
-                max-width: 80%;
-                width: 100%;
                 color: whitesmoke;
-                text-align: center;
+                text-align: justify;
                 margin: 1.5rem auto;
             }
 
@@ -439,6 +471,7 @@ footer {
     width: 100%;
     min-height: 50vh;
     background: url(../images/svg/pattern.svg);
+
     .container_box {
         width: inherit;
         min-height: inherit;
@@ -448,14 +481,13 @@ footer {
         align-items: center;
         backdrop-filter: blur(8px);
         color: whitesmoke;
-
+        flex-direction: column;
         .footer__content {
             flex: 0.3;
             min-height: inherit;
             padding: 1rem;
             width: 100%;
             display: grid;
-            // padding: 2rem;
             grid-template-rows: repeat(3, 100px, 200px, 1fr);
             align-items: center;
 

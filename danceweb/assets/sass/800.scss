@@ -110,31 +110,65 @@ header {
         }
 
         ul {
-            flex: 0.9;
-            width: 100%;
-            min-height: inherit;
-            display: flex;
-            justify-content: end;
-            align-items: center;
-
-            a {
-                color: #bcbdeb;
-                padding: 0rem 2rem;
-            }
+            display: none;
         }
 
     }
 
     .cursor{
-        display: none;
+        display: block;
+        background-image: url('../images/svg/menu.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 6;
+        width: 75px;
+        height: 75px;
+        cursor: pointer;
     }
     
+    .action{
+        transform: translateX(0%) !important;
+        transition: 1.6s all ease-in-out;
+    }
+
     .mobile_nav{
-        display: none;
+        width: 100%;
+        min-height: 100vh;
+        backdrop-filter: blur(25px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 5;
+        transform: translateX(-100%);
+        transition: 0.6s all ease-in-out;
+
+        ul{
+            width: inherit;
+            min-height: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+             
+            li{
+                padding: 1.5rem 1rem;
+                width: inherit;
+                text-align: center;
+
+                a{
+                    color: whitesmoke;
+                    font-size: 1.5rem;
+                }
+            }
+        }
     }
 
     .hero {
-        background: linear-gradient(rgba(53, 56, 102, 0.5), rgba(192, 123, 53, 0.5)), url(../images/desktop/pic6.webp);
+        background: linear-gradient(rgba(53, 56, 102, 0.5), rgba(192, 123, 53, 0.5)), url(../images/desktop/pic6.jpg);
         background-size: cover;
         background-position: center center;
         min-height: inherit;
@@ -298,7 +332,7 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: row;
+        flex-direction: column;
         .image__box {
             background: linear-gradient(rgba(53, 56, 102, 0.3), rgba(0, 24, 131, 0.3)), url(../images/desktop/pic4.webp);
             width: inherit;
@@ -439,25 +473,27 @@ footer {
     width: 100%;
     min-height: 50vh;
     background: url(../images/svg/pattern.svg);
+
     .container_box {
         width: inherit;
         min-height: inherit;
         padding: 2rem;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         backdrop-filter: blur(8px);
         color: whitesmoke;
-
+        flex-wrap: wrap;
+        text-align: start;
         .footer__content {
-            flex: 0.3;
+            
             min-height: inherit;
             padding: 1rem;
-            width: 100%;
+            width: 50%;
             display: grid;
-            // padding: 2rem;
-            grid-template-rows: repeat(3, 100px, 200px, 1fr);
+            // grid-template-rows: repeat(3, 100px, 200px, 1fr);
             align-items: center;
+            justify-content: start;
 
             span {
                 font-size: 2rem;
@@ -490,7 +526,7 @@ footer {
         }
 
         .footer__content1 {
-            flex: 0.4;
+           
             min-height: inherit;
 
             p {
@@ -500,3 +536,5 @@ footer {
 
     }
 }
+
+
